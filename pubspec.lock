@@ -166,6 +166,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.6"
+  csslib:
+    dependency: transitive
+    description:
+      name: csslib
+      sha256: "09bad715f418841f976c77db72d5398dc1253c21fb9c0c7f0b0b985860b2d58e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -301,6 +309,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  html:
+    dependency: "direct main"
+    description:
+      name: html
+      sha256: "1fc58edeaec4307368c60d59b7e15b9d658b57d7f3125098b6294153c75337ec"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.15.5"
+  html_unescape:
+    dependency: "direct main"
+    description:
+      name: html_unescape
+      sha256: "15362d7a18f19d7b742ef8dcb811f5fd2a2df98db9f80ea393c075189e0b61e3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   http_multi_server:
     dependency: transitive
     description:
@@ -317,6 +341,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.1"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.19.0"
   io:
     dependency: transitive
     description:
@@ -497,10 +529,10 @@ packages:
     dependency: "direct dev"
     description:
       name: retrofit_generator
-      sha256: "93d7e6ec656de3d6c8c9b41faf23e50df5761d873a9aaf7531c0982606d1f887"
+      sha256: f76fdb2b66854690d5a332e7364d7561fc9dc2b3c924d7956ab8070495e21f6a
       url: "https://pub.dev"
     source: hosted
-    version: "9.1.4"
+    version: "9.1.5"
   riverpod:
     dependency: transitive
     description:
@@ -618,6 +650,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.3"
+  timeago:
+    dependency: "direct main"
+    description:
+      name: timeago
+      sha256: "054cedf68706bb142839ba0ae6b135f6b68039f0b8301cbe8784ae653d5ff8de"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.7.0"
   timing:
     dependency: transitive
     description:

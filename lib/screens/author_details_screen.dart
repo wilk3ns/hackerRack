@@ -38,6 +38,7 @@ class AuthorDetailsContent extends StatelessWidget {
         children: [
           Text('Username: ${user.id}', style: Theme.of(context).textTheme.titleLarge),
           Text('Created: ${DateTime.fromMillisecondsSinceEpoch(user.created * 1000)}'),
+          Text('Karma: ${user.karma}'),
           if (user.about != null) ...[
             const SizedBox(height: 10),
             Text('About: ${user.about}'),
@@ -46,9 +47,9 @@ class AuthorDetailsContent extends StatelessWidget {
           const Text('Submitted Posts', style: TextStyle(fontWeight: FontWeight.bold)),
           Expanded(
             child: ListView.builder(
-              itemCount: user.submitted?.length ?? 0,
+              itemCount: user.submitted.length,
               itemBuilder: (context, index) {
-                final postId = user.submitted![index];
+                final postId = user.submitted[index];
                 return StoryItem(storyId: postId);
               },
             ),

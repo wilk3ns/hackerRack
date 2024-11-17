@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       title: 'Hacker News App',
-      themeMode: ThemeMode.system, // Use system theme preference
+      themeMode: ThemeMode.system,
       darkTheme: ThemeData(
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        brightness: Brightness.dark, // Set to dark mode
+        brightness: Brightness.dark,
       ),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

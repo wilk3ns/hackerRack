@@ -92,7 +92,7 @@ class _AuthorDetailsContentState extends ConsumerState<AuthorDetailsContent>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Joined ${timeago.format(DateTime.fromMillisecondsSinceEpoch(widget.user.created * 1000))}',
+            'Joined: ${timeago.format(DateTime.fromMillisecondsSinceEpoch(widget.user.created * 1000))}',
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(

@@ -32,17 +32,20 @@ class StoryListTile extends StatelessWidget {
 
   const StoryListTile({super.key, required this.story});
 
+  bool get isComment => story.title == null;
+
   @override
   Widget build(BuildContext context) {
-    final displayTitle = story.title ?? story.text;
+    final displayText = story.title ?? story.text ?? '';
 
     return ListTile(
-      title: displayTitle != null
-          ? Text(
-        displayTitle,
-        style: Theme.of(context).textTheme.titleMedium?.copyWith(height: 1.2),
-      )
-          : const SizedBox.shrink(), // Empty widget if both title and text are null
+      title: Text(
+        displayText,
+        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+          height: 1.2,
+          fontSize: isComment ? 14 : null,
+        ),
+      ),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [const SizedBox(height: 4), _buildMetadata(context)],
@@ -59,13 +62,15 @@ class StoryListTile extends StatelessWidget {
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        _buildMetadataItem(icon: Icons.arrow_upward, text: '${story.score}'),
-        _buildDot(),
-        _buildMetadataItem(
-          icon: Icons.comment_outlined,
-          text: '${story.descendants ?? 0}',
-        ),
-        _buildDot(),
+        if (!isComment) ...[
+          _buildMetadataItem(icon: Icons.arrow_upward, text: '${story.score}'),
+          _buildDot(),
+          _buildMetadataItem(
+            icon: Icons.comment_outlined,
+            text: '${story.descendants ?? 0}',
+          ),
+          _buildDot(),
+        ],
         Text(elapsedTime, style: const TextStyle(color: Colors.grey)),
         _buildDot(),
         Text('by ', style: const TextStyle(color: Colors.grey)),

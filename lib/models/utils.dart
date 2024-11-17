@@ -6,7 +6,6 @@ String? sanitizeNullableString(String? input) {
   final unescape = HtmlUnescape();
   final unescapedString = unescape.convert(input);
 
-  // Strip HTML tags
   final document = parse(unescapedString);
   return document.body?.text;
 }

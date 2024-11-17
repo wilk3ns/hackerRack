@@ -9,7 +9,6 @@ class DioClient {
       ),
     );
 
-    // Add interceptors for logging (optional)
     dio.interceptors.add(LogInterceptor(
       responseBody: true,
       requestBody: true,

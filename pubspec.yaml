@@ -46,6 +46,9 @@ dependencies:
   timeago: ^3.7.0
   html_unescape: ^2.0.0
   html: ^0.15.5
+  shared_preferences: ^2.3.3
+  dartz: ^0.10.1
+  webview_flutter: ^4.10.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import '../models/story.dart';
+
+import '../../models/story.dart';
 import '../providers/story_providers.dart';
 
 class StoryItem extends ConsumerWidget {
@@ -17,7 +18,10 @@ class StoryItem extends ConsumerWidget {
 
     return storyAsyncValue.when(
       data: (story) => StoryListTile(story: story),
-      loading: () => const ShimmerStoryItem(),
+      loading:
+          () => ShimmerStoryItem(
+            isDarkMode: Theme.of(context).brightness == Brightness.dark,
+          ),
       error:
           (error, stack) => ListTile(
             title: Text('Error loading story'),
@@ -105,14 +109,16 @@ class StoryListTile extends StatelessWidget {
 }
 
 class ShimmerStoryItem extends StatelessWidget {
-  const ShimmerStoryItem({super.key});
+  final bool isDarkMode;
+
+  const ShimmerStoryItem({super.key, this.isDarkMode = false});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Shimmer.fromColors(
-        baseColor: Colors.grey[300]!,
-        highlightColor: Colors.grey[100]!,
+        baseColor: isDarkMode ? Colors.grey[800]! : Colors.grey[300]!,
+        highlightColor: isDarkMode ? Colors.grey[700]! : Colors.grey[100]!,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

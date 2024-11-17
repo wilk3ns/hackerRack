@@ -1,7 +1,8 @@
 import 'package:go_router/go_router.dart';
-import 'screens/top_stories_screen.dart';
-import 'screens/author_details_screen.dart';
-import 'screens/story_details_screen.dart';
+import 'package:hacker_rack/presentation/screens/author_details_screen.dart';
+import 'package:hacker_rack/presentation/screens/story_details_screen.dart';
+import 'package:hacker_rack/presentation/screens/top_stories_screen.dart';
+
 
 final GoRouter router = GoRouter(
   initialLocation: '/',

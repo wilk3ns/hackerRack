@@ -3,11 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
-
-import '../../models/story.dart';
-import '../providers/story_providers.dart';
-import '../widgets/loading_indicator.dart';
-import '../widgets/error_view.dart';
+import 'package:hacker_rack/models/story.dart';
+import 'package:hacker_rack/presentation/providers/story_providers.dart';
+import 'package:hacker_rack/presentation/widgets/loading_indicator.dart';
+import 'package:hacker_rack/presentation/widgets/error_view.dart';
 
 class StoryDetailsScreen extends ConsumerWidget {
   final int storyId;
@@ -39,7 +38,6 @@ class StoryDetailsContent extends StatefulWidget {
 
 class _StoryDetailsContentState extends State<StoryDetailsContent> {
   late final WebViewController _controller;
-  bool _isLoading = true;
 
   @override
   void initState() {
@@ -51,13 +49,10 @@ class _StoryDetailsContentState extends State<StoryDetailsContent> {
             ..setNavigationDelegate(
               NavigationDelegate(
                 onPageStarted: (String url) {
-                  setState(() {
-                    _isLoading = true;
-                  });
+                  setState(() {});
                 },
                 onPageFinished: (String url) {
                   setState(() {
-                    _isLoading = false;
                   });
                 },
               ),
@@ -103,21 +98,19 @@ class _StoryDetailsContentState extends State<StoryDetailsContent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Story Details')),
-      body: Column(
-        children: [
-          _buildMetadata(context),
-          if (widget.story.url != null) ...[
-            const Divider(),
-            Expanded(
-              child: Stack(
-                children: [
-                  WebViewWidget(controller: _controller),
-                  if (_isLoading) const LinearProgressIndicator(),
-                ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildMetadata(context),
+            if (widget.story.url != null) ...[
+              const Divider(),
+              SizedBox(
+                height: 800,
+                child: WebViewWidget(controller: _controller),
               ),
-            ),
+            ],
           ],
-        ],
+        ),
       ),
       floatingActionButton:
           widget.story.url != null

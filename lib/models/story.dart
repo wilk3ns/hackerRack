@@ -15,9 +15,8 @@ class Story with _$Story {
     String? url,
     int? descendants,
     int? score,
+    required String type,
   }) = _Story;
 
   factory Story.fromJson(Map<String, dynamic> json) => _$StoryFromJson(json);
 }
-
-

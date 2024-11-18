@@ -41,9 +41,7 @@ class SubmissionsList extends ConsumerWidget {
 
             return storyAsync.when(
               data: (story) {
-                final isStoryComment =
-                    story.title == null && story.text != null;
-                if (isComment != isStoryComment) {
+                if (isComment != (story.type == 'comment')) {
                   return const SizedBox.shrink();
                 }
                 return StoryItem(storyId: storyId);

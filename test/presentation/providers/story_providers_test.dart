@@ -32,6 +32,7 @@ void main() {
       descendants: 10,
       score: 100,
       text: null,
+      type: 'story',
     );
 
     when(mockRepository.getStory(123)).thenAnswer((_) async => Right(testStory));

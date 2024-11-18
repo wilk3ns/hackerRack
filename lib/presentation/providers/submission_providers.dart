@@ -12,11 +12,11 @@ final submissionsProvider = StateNotifierProvider.family<
 
 class SubmissionConfig {
   final List<int> submissionIds;
-  final bool isComments;
+  final bool isComment;
 
   const SubmissionConfig({
     required this.submissionIds,
-    required this.isComments,
+    required this.isComment,
   });
 
   @override
@@ -25,10 +25,10 @@ class SubmissionConfig {
       other is SubmissionConfig &&
           runtimeType == other.runtimeType &&
           submissionIds == other.submissionIds &&
-          isComments == other.isComments;
+          isComment == other.isComment;
 
   @override
-  int get hashCode => submissionIds.hashCode ^ isComments.hashCode;
+  int get hashCode => submissionIds.hashCode ^ isComment.hashCode;
 }
 
 class SubmissionsNotifier extends StateNotifier<AsyncValue<List<Story>>> {
@@ -84,9 +84,9 @@ class SubmissionsNotifier extends StateNotifier<AsyncValue<List<Story>>> {
               .whereType<Story>()
               .where(
                 (story) =>
-                    _config.isComments
-                        ? story.title == null
-                        : story.title != null,
+                    _config.isComment
+                        ? story.type == 'comment'
+                        : story.type == 'story',
               )
               .toList();
 

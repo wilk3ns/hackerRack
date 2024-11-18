@@ -34,6 +34,7 @@ void main() {
       descendants: 10,
       score: 100,
       text: null,
+      type: 'comment',
     );
 
     test('should return Story when API call is successful', () async {

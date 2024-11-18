@@ -224,29 +224,6 @@ flutter  test
 ```
 
 
-
-## Future Improvements
-
-
-
-- [ ] Increase test coverage with widget and integration tests
-
-- [ ] Add proper dark mode support
-
-- [ ] Implement animations for better UX
-
-- [ ] Optimize caching strategy
-
-- [ ] Add pull-to-refresh indicators
-
-- [ ] Improve error handling and offline support
-
-- [ ] Add proper documentation
-
-- [ ] I prefer using Database for caching, but it was not a requirement, so I used shared preferences
-
-
-
 ## Dependencies
 
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/story_providers.dart';
-import '../widgets/story_item.dart';
+import 'package:hacker_rack/presentation/providers/story_providers.dart';
+import 'package:hacker_rack/presentation/widgets/story_item.dart';
 
 class SubmissionsList extends ConsumerWidget {
   final List<int> submissionIds;

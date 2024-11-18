@@ -3,9 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timeago/timeago.dart' as timeago;
-
-import '../../models/story.dart';
-import '../providers/story_providers.dart';
+import 'package:hacker_rack/models/story.dart';
+import 'package:hacker_rack/presentation/providers/story_providers.dart';
 
 class StoryItem extends ConsumerWidget {
   final int storyId;

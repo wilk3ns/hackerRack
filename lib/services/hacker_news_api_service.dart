@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import '../models/story.dart';
-import '../models/user.dart';
+import 'package:hacker_rack/models/story.dart';
+import 'package:hacker_rack/models/user.dart';
 
 part 'hacker_news_api_service.g.dart';
 

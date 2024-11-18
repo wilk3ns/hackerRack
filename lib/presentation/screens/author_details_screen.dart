@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timeago/timeago.dart' as timeago;
-
-import '../../models/user.dart';
-import '../providers/user_providers.dart';
-import '../widgets/loading_indicator.dart';
-import '../widgets/error_view.dart';
-import '../widgets/submissions_list.dart';
+import 'package:hacker_rack/models/user.dart';
+import 'package:hacker_rack/presentation/providers/user_providers.dart';
+import 'package:hacker_rack/presentation/widgets/loading_indicator.dart';
+import 'package:hacker_rack/presentation/widgets/error_view.dart';
+import 'package:hacker_rack/presentation/widgets/submissions_list.dart';
 
 class AuthorDetailsScreen extends ConsumerWidget {
   final String authorId;

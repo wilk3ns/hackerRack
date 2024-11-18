@@ -52,8 +52,7 @@ class _StoryDetailsContentState extends State<StoryDetailsContent> {
                   setState(() {});
                 },
                 onPageFinished: (String url) {
-                  setState(() {
-                  });
+                  setState(() {});
                 },
               ),
             )

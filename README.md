@@ -31,7 +31,7 @@ This Hacker News client allows users to:
 
 
 
-I tried to strike a balance between fully implementing the clean architecture, keeping the codebase maintainable and also make it simle, but not primitive. So it is neither fully clean, nor primitive.
+I tried to strike a balance between fully implementing the clean architecture, keeping the codebase maintainable and also make it simple, but not primitive. So it is neither fully clean, nor primitive.
 
 The project follows clean architecture principles with three main layers:
 

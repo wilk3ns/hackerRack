@@ -7,8 +7,7 @@ part 'hacker_news_api_service.g.dart';
 
 @RestApi(baseUrl: "https://hacker-news.firebaseio.com/v0")
 abstract class HackerNewsApiService {
-  factory HackerNewsApiService(Dio dio, {String baseUrl}) =
-      _HackerNewsApiService;
+  factory HackerNewsApiService(Dio dio, {String baseUrl}) = _HackerNewsApiService;
 
   @GET("/topstories.json")
   Future<List<int>> getTopStories();

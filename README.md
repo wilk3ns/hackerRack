@@ -199,7 +199,7 @@ flutter pub get
 
 ```bash
 
-flutter dart run build_runner build
+dart run build_runner build
 
 ```
 

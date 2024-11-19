@@ -111,10 +111,6 @@ The project includes unit tests focusing on:
 
 
 
-## Areas for Future Improvement
-
-
-
 ### Testing Coverage
 
 - Add widget tests for UI components
